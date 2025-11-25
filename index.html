@@ -372,6 +372,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::before {
@@ -415,6 +417,7 @@
         .service-features {
             list-style: none;
             margin-bottom: 24px;
+            flex-grow: 1;
         }
 
         .service-features li {
@@ -1053,6 +1056,68 @@
         </div>
     </section>
 
+    <!-- QUOTE FORM SECTION -->
+    <section class="section section-dark" id="quote">
+        <div class="container">
+            <div class="text-center fade-in" style="margin-bottom: 20px;">
+                <h2>Ready to Give Your Pet the <span class="accent-text">Royal Treatment?</span></h2>
+                <p style="color: rgba(250, 250, 250, 0.8); font-size: 18px;">Request your personalized grooming quote and join our family of happy pets and satisfied owners.</p>
+            </div>
+            <div class="form-container fade-in">
+                <form method="POST" name="quote-request" netlify netlify-honeypot="bot-field" data-netlify="true">
+                    <!-- Hidden field for spam protection -->
+                    <input type="hidden" name="form-name" value="quote-request">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pet-name">Pet's Name *</label>
+                        <input type="text" id="pet-name" name="pet-name" placeholder="Max" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pet-breed">Pet Breed/Type *</label>
+                        <input type="text" id="pet-breed" name="pet-breed" placeholder="Golden Retriever" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="basic-groom">Basic Groom</option>
+                            <option value="premium-spa">Premium Spa</option>
+                            <option value="luxury-treatment">Luxury Full Treatment</option>
+                            <option value="not-sure">Not Sure - Need Recommendation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Notes or Questions</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your pet's temperament, any special needs, or specific styling requests..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-btn">Send Quote Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- TESTIMONIALS SECTION -->
     <section class="section section-light" id="testimonials">
         <div class="container">
@@ -1178,68 +1243,6 @@
                         <p>We ask for at least 24 hours' notice if you need to reschedule or cancel your appointment. This allows us to accommodate other clients on our waiting list. Late cancellations (less than 24 hours) or no-shows may result in a cancellation fee. We understand emergencies happen and will work with you on a case-by-case basis.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUOTE FORM SECTION -->
-    <section class="section section-dark" id="quote">
-        <div class="container">
-            <div class="text-center fade-in" style="margin-bottom: 20px;">
-                <h2>Ready to Give Your Pet the <span class="accent-text">Royal Treatment?</span></h2>
-                <p style="color: rgba(250, 250, 250, 0.8); font-size: 18px;">Request your personalized grooming quote and join our family of happy pets and satisfied owners.</p>
-            </div>
-            <div class="form-container fade-in">
-                <form method="POST" name="quote-request" netlify netlify-honeypot="bot-field" data-netlify="true">
-                    <!-- Hidden field for spam protection -->
-                    <input type="hidden" name="form-name" value="quote-request">
-                    <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                    </p>
-
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" placeholder="John Smith" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pet-name">Pet's Name *</label>
-                        <input type="text" id="pet-name" name="pet-name" placeholder="Max" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pet-breed">Pet Breed/Type *</label>
-                        <input type="text" id="pet-breed" name="pet-breed" placeholder="Golden Retriever" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Interested In *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a Service</option>
-                            <option value="basic-groom">Basic Groom</option>
-                            <option value="premium-spa">Premium Spa</option>
-                            <option value="luxury-treatment">Luxury Full Treatment</option>
-                            <option value="not-sure">Not Sure - Need Recommendation</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Additional Notes or Questions</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your pet's temperament, any special needs, or specific styling requests..."></textarea>
-                    </div>
-
-                    <button type="submit" class="form-btn">Send Quote Request</button>
-                </form>
             </div>
         </div>
     </section>
