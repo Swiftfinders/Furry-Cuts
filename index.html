@@ -443,11 +443,14 @@
         }
 
         .service-features li::before {
-            content: '✓';
+            content: '\2713';
             position: absolute;
             left: 0;
+            top: 10px;
             color: var(--accent-sage);
             font-weight: bold;
+            font-size: 16px;
+            line-height: 1;
         }
 
         /* ===== GROOMER SECTION ===== */
@@ -878,10 +881,6 @@
                 gap: 32px;
             }
 
-            .about-content .about-image {
-                order: -1;
-            }
-
             /* Sections */
             .section {
                 padding: 48px 0;
@@ -939,6 +938,11 @@
             .service-features li {
                 font-size: 15px;
                 padding: 8px 0;
+            }
+
+            .service-features li::before {
+                top: 8px;
+                font-size: 14px;
             }
 
             /* Groomer section */
